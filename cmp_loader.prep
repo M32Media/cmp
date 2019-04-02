@@ -127,15 +127,21 @@
         };
 
         var __showm32cmp = window.__showm32cmp || false;
+        var geo;
         geoxmlhttp.onreadystatechange = function(){
             if (geoxmlhttp.readyState == 4) {
                 if (geoxmlhttp.status == 200) {
                     try {
+                        var geo = JSON.parse(geoxmlhttp.responseText);
+                        if(geo === undefined || !geo) {
+                            geo = {};
+                        }
                         // show consent data if europe or the variable was set
-                        __showm32cmp = window.__showm32cmp || geocountries[JSON.parse(geoxmlhttp.responseText).country_code] == "Europe";
+                        __showm32cmp = window.__showm32cmp || geocountries[geo.country_code] == "Europe";
                     } catch (e) {
                         // better safe than sorry
                         __showm32cmp = true;
+                        geo = geo || {};
                     }
                     if (__showm32cmp) {
                         conditionallyShowUI();
@@ -143,7 +149,10 @@
                 } else {
                     // On status othen than success : again, better safe than sorry
                     conditionallyShowUI();
+                    geo = {};
                 }
+                // setups the global variable for potential use by other scripts
+                window.__m32geo = geo;
             }
         };
 
