@@ -32,8 +32,8 @@ def upload(files, prod=False):
     for file in files:
         # Stores the new minified and unminified files.
         if file in files_to_process:
-            put_on_rdc('{}.min.js'.format(file.split(".")[0]))
-        put_on_rdc(file)
+            put_on_rdc('{}.min.js'.format(file.split(".")[0]), prod)
+        put_on_rdc(file, prod)
 
 def build_loaders_for_all_locales():
     """builds a different loader script for each locale. If you want to add one, add it to the supported_locales array above."""
@@ -54,4 +54,4 @@ if __name__ == "__main__":
     build_loaders_for_all_locales()
     get_bundled_cmp_from_build_folder()
     minify(files_to_process)
-    upload(files_to_process)
+    upload(files_to_process, ("--prod" in argv))
