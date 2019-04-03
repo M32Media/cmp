@@ -14,6 +14,11 @@ def minify(files):
         with open("{}.min.js".format(f.split(".")[0]), "w") as out_f, open(f, "r") as in_f:
             out_f.write(jsmin(in_f.read()))
 
+def build_please():
+    # removes any potential build folder
+    run(["rm","-rf", "build"])
+    run(["yarn", "build"])
+
 def put_on_rdc(file, prod):
     test_dir = ''
     if not prod:
@@ -51,6 +56,7 @@ def get_bundled_cmp_from_build_folder():
 
 if __name__ == "__main__":
     # Default behavior of this script is to minify and upload everything that needs it
+    build_please()
     build_loaders_for_all_locales()
     get_bundled_cmp_from_build_folder()
     minify(files_to_process)
