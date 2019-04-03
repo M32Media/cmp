@@ -7,7 +7,7 @@ const defaultConfig = {
 	customPurposeListLocation: null,
 	// The location of the latest vendorlist to use.
 	globalVendorListLocation: 'https://vendorlist.consensu.org/vendorlist.json',
-	globalConsentLocation: 'm32cmp.mgr.consensu.org',
+	globalConsentLocation: '//m32cmp.mgr.consensu.org',
         storeConsentGlobally: true,
 	storePublisherData: false,
 	logging: false,
