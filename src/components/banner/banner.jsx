@@ -28,6 +28,8 @@ export default class Banner extends Component {
 			isExpanded: false,
 			selectedPanelIndex: 0,
 		};
+            // this is a hack.
+            window.__cmp.handleVendorListClick = this.handleVendorListClick
 	}
 
 	handleInfo = (index) => () => {
