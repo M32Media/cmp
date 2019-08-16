@@ -14,7 +14,7 @@ export default class Switch extends Component {
 
 	shouldComponentUpdate(nextProps) {
 		return nextProps.isSelected !== this.props.isSelected;
-	};
+	}
 
 	render(props) {
 		const {

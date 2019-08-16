@@ -34,6 +34,7 @@ export default class Vendors extends Component {
 
 	handleToggleAll = () => {
 		const { id: selectedPurposeId } = this.props.selectedPurposeDetails;
+		console.log(this.state)
 		const {isSelectAll} = this.state;
 		this.props.selectAllVendors(isSelectAll, selectedPurposeId);
 		this.setState({isSelectAll: !isSelectAll});
@@ -115,7 +116,14 @@ export default class Vendors extends Component {
 													onClick={this.handleSelectVendor}
 												/>
 											</span> :
-											<VendorsLabel localizeKey='optOut'>requires opt-out</VendorsLabel>
+											<span class={style.allowSwitch}>
+												<VendorsLabel localizeKey='accept'>Allow</VendorsLabel> <Switch
+													color={primaryColor}
+													dataId={id}
+													isSelected={false}
+													onClick={this.handleSelectVendor}
+												/>
+											</span>
 										}
 									</td>
 								</tr>
