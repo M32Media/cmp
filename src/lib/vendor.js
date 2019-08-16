@@ -3,16 +3,6 @@ import 'whatwg-fetch';
 import config from './config';
 import log from './log';
 
-const PUB_VENDOR_LOCATION = '/.well-known/pubvendors.json';
-
-/**
- * Fetch the pubvendors.json from the local domain
- */
-function fetchPubVendorList() {
-	return fetch(PUB_VENDOR_LOCATION)
-		.then(res => res.json())
-		.catch(() => {});
-}
 
 /**
  * Fetch the global vendor list if the location is configured
@@ -48,6 +38,5 @@ function fetchPurposeList() {
 
 export {
 	fetchGlobalVendorList,
-	fetchPubVendorList,
 	fetchPurposeList
 };

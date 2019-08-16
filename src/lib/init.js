@@ -25,7 +25,7 @@ export function init(configUpdates) {
 	// Fetch the current vendor consent before initializing
 	return Promise.all([
 		readVendorConsentCookie(),
-		fetchPubVendorList()
+		// fetchPubVendorList()
 	])
 		.then(([vendorConsentData, pubVendorsList]) => {
 			const {vendors} = pubVendorsList || {};
@@ -42,7 +42,7 @@ export function init(configUpdates) {
 				cookieVersion: COOKIE_VERSION,
 				vendorConsentData,
 				publisherConsentData: readPublisherConsentCookie(),
-				pubVendorsList,
+				// pubVendorsList,
 				allowedVendorIds
 			});
 

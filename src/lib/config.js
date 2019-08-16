@@ -12,7 +12,8 @@ const defaultConfig = {
 	storePublisherData: false,
 	logging: true,
 	gdprApplies: true,
-	gdprAppliesGlobally: true,
+	gdprAppliesGlobally: true
+	
 };
 
 class Config {
