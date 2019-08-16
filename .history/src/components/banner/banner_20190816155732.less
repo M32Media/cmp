@@ -9,7 +9,7 @@
 	border-top: 1px solid #d2d2d2;
 
 	color: @color-textLight;
-	background: lighten(@color-primary, 35%);
+	background: lightblue;
 	font-size: 16px;
 	height: 33.333vh;
 	min-height: 300px;
@@ -17,13 +17,6 @@
 	transition: bottom 0.5s ease-in-out, opacity 0.5s linear;
 
 	padding: 30px;
-
-	@media @tablet {
-		margin-left: 0;
-		height: 40vh;
-		min-height: 500px;
-		max-height: 100%;
-	}
 
 	@media @smartphone {
 		margin-top: -80px;
@@ -48,12 +41,6 @@
 			.info {
 				flex: 1;
 				line-height: 16px;
-
-				@media @tablet {
-					display: block;
-					clear: both;
-					flex: inherit;
-				}
 
 				@media @smartphone {
 					font-size: 12px;
@@ -142,12 +129,7 @@
 				margin-left: 50px;
 
 				@media @tablet {
-					display: block;
-					width: 100%;
-					clear: both;
-					flex: inherit;
-					margin-left: 20px;
-					text-align: right;
+					margin-left: 0;
 				}
 
 				@media @smartphone {
@@ -181,9 +163,6 @@
 
 						@media @tablet {
 							clear: both;
-							margin: 10px 0 10px 0;
-							width: 80%;
-							float: right;
 						}
 
 						&:hover {
@@ -198,9 +177,6 @@
 
 						@media @tablet {
 							clear: both;
-							margin: 10px 0 0 0;
-							width: 80%;
-							float: right
 						}
 
 						&:hover {

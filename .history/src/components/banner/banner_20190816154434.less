@@ -9,21 +9,13 @@
 	border-top: 1px solid #d2d2d2;
 
 	color: @color-textLight;
-	background: lighten(@color-primary, 35%);
-	font-size: 16px;
-	height: 33.333vh;
-	min-height: 300px;
+	background: lightblue;
+	font-size: 18px;
 	max-height: 100%;
+	height: 33.333vh;
 	transition: bottom 0.5s ease-in-out, opacity 0.5s linear;
 
 	padding: 30px;
-
-	@media @tablet {
-		margin-left: 0;
-		height: 40vh;
-		min-height: 500px;
-		max-height: 100%;
-	}
 
 	@media @smartphone {
 		margin-top: -80px;
@@ -49,12 +41,6 @@
 				flex: 1;
 				line-height: 16px;
 
-				@media @tablet {
-					display: block;
-					clear: both;
-					flex: inherit;
-				}
-
 				@media @smartphone {
 					font-size: 12px;
 				}
@@ -64,7 +50,6 @@
 					font-weight: bold;
 					color: @color-text;
 					padding: 15px 0;
-					margin-bottom: 10px;
 
 					@media @smartphone {
 						font-size: 16px;
@@ -110,11 +95,6 @@
 							ul {
 								margin: 5px 0 15px 0;
 								padding: 0 0 0 36px;
-
-								li {
-									line-height: 1.5em;
-									font-size: 14px;
-								}
 							}
 						}
 
@@ -141,15 +121,6 @@
 				white-space: nowrap;
 				margin-left: 50px;
 
-				@media @tablet {
-					display: block;
-					width: 100%;
-					clear: both;
-					flex: inherit;
-					margin-left: 20px;
-					text-align: right;
-				}
-
 				@media @smartphone {
 					margin-left: 0;
 				}
@@ -175,37 +146,13 @@
 					}
 
 					&.learnMore {
-						margin-left: 10px;
-						background: @color-primary;
-						color: #fff;
-
-						@media @tablet {
-							clear: both;
-							margin: 10px 0 10px 0;
-							width: 80%;
-							float: right;
-						}
-
-						&:hover {
-							background: darken(@color-primary, 5%);
-						}
+						color: @color-primary;
 					}
 
 					&.continue {
 						margin-left: 10px;
-						background: darken(@color-primary, 5%);
+						background: @color-primary;
 						color: #fff;
-
-						@media @tablet {
-							clear: both;
-							margin: 10px 0 0 0;
-							width: 80%;
-							float: right
-						}
-
-						&:hover {
-							background: darken(@color-primary, 10%);
-						}
 					}
 				}
 			}
@@ -220,6 +167,10 @@
 			margin: 0;
 			padding: 0 0 0 20px;
 			list-style-type: square;
+
+			li {
+				line-height: 2em;;
+			}
 		}
 	}
 }

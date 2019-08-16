@@ -6,3 +6,5 @@
 /.idea
 /.vscode
 *.*~
+*.iml
+package-lock.json
